@@ -29,3 +29,15 @@ npx playwright install
 ```sh
 npm run test
 ```
+
+## Install MSW
+
+Install MSW by,
+
+```sh
+npm install msw@latest --save-dev
+sh -c 'mkdir -p "$(dirname "$0")" && touch "$0"' `echo src/mocks/handlers.ts`
+
+npx msw init public --save
+sh -c 'mkdir -p "$(dirname "$0")" && touch "$0"' `echo src/mocks/browser.ts`
+```
