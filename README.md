@@ -17,3 +17,15 @@ touch tsconfig.spec.json vitest.setup.ts
 sh -c 'mkdir -p "$(dirname "$0")" && touch "$0"' `echo src/__tests__/data-fetch.spec.ts`
 npm install -D vitest @vitest/browser playwright
 ```
+
+Install playwright by,
+
+```sh
+npx playwright install
+```
+
+## Run tests
+
+```sh
+npm run test
+```
