@@ -8,4 +8,16 @@ export const handlers = [
       completed: false,
     });
   }),
+  http.get("/", ({ request }) => {
+    const url = new URL(request.url);
+    const count = url.searchParams.get("count");
+    return HttpResponse.text(
+      count === "3"
+        ? "<html><body><div data-testid='target'></div></body></html>"
+        : `<html><body><iframe src='/?count=${
+            parseInt(count || "0", 10) + 1
+          }></iframe></body></html>`,
+      { status: 200 }
+    );
+  }),
 ];
