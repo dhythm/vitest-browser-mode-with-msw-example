@@ -8,7 +8,7 @@ export default defineConfig({
   test: {
     browser: {
       enabled: true,
-      headless: true,
+      // headless: true,
       name: "chromium",
       provider: "playwright",
       screenshotFailures: false,

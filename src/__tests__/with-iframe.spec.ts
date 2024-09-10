@@ -7,7 +7,8 @@ beforeAll(async () => {
 });
 
 test("nested iframe should be loaded", async () => {
-  document.body.innerHTML = `<iframe src='${baseUri}?count=1'></iframe>`;
+  //   document.body.innerHTML = `<iframe src='${baseUri}?count=1'></iframe>`;
+  document.body.innerHTML = `<iframe src='http://localhost:8080/hello/1'></iframe>`;
   const iframe = document.querySelector("iframe");
   invariant(iframe, "iframe must be defined.");
   await new Promise((resolve) => {
