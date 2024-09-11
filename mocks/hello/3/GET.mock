@@ -2,4 +2,4 @@ HTTP/1.1 200 OK
 Access-Control-Allow-Origin: *
 Content-Type: text/html; charset=utf-8
 
-<html><body><div data-testid='target'></div></body></html>
+<html><body><div data-testid='target'>3</div></body></html>

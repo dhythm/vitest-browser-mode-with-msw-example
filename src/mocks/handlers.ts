@@ -1,6 +1,6 @@
 import { http, HttpResponse } from "msw";
 
-export const baseUri = "/mocked/";
+export const baseUri = "http://localhost:8080/";
 
 export const handlers = [
   http.get("https://jsonplaceholder.typicode.com/todos/:id", () => {
@@ -20,7 +20,13 @@ export const handlers = [
         : `<html><body><iframe src='${baseUri}?count=${
             parseInt(count || "0", 10) + 1
           }></iframe></body></html>`,
-      { status: 200, headers: { "Content-Type": "text/html" } }
+      {
+        status: 200,
+        headers: {
+          "Content-Type": "text/html",
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
     );
   }),
 ];

@@ -8,9 +8,14 @@ export default defineConfig({
   test: {
     browser: {
       enabled: true,
-      // headless: true,
+      headless: true,
       name: "chromium",
       provider: "playwright",
+      providerOptions: {
+        launch: {
+          args: ["--disable-web-security"],
+        },
+      },
       screenshotFailures: false,
     },
     globals: true,

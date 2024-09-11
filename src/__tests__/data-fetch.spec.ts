@@ -14,7 +14,8 @@ test("fetch data from external api", async () => {
   expect(data).toEqual({
     userId: 1,
     id: 1,
-    title: "delectus aut autem",
+    // title: "delectus aut autem",
+    title: "title",
     completed: false,
   });
 });
