@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:run": "vitest --run",
-    "test:run:mocked": "run-p serve:mocks test:run",
+    "test:run:mocked": "run-p --race serve:mocks test:run",
     "serve:mocks": "npx mockserver -p 8080 -m mocks"
   },
   "dependencies": {
