@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:run": "vitest --run",
-    "test:run:mocked": "run-p --race serve:mocks test:run",
+    "test:run:p": "run-p --race serve:mocks test:run",
+    "test:run:concurrently": "concurrently --kill-others \"npx mockserver -p 8080 -m mocks\" \"npm run test:run\"",
     "serve:mocks": "npx mockserver -p 8080 -m mocks"
   },
   "dependencies": {
@@ -24,6 +25,7 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "@vitest/browser": "^2.0.5",
+    "concurrently": "^9.0.1",
     "eslint": "^9.9.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
