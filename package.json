@@ -11,7 +11,7 @@
     "test": "vitest",
     "test:run": "vitest --run",
     "test:run:p": "run-p --race serve:mocks test:run",
-    "test:run:concurrently": "concurrently --kill-others \"npx mockserver -p 8080 -m mocks\" \"sleep 1 && npm run test:run\"",
+    "test:run:concurrently": "concurrently --kill-others --success first \"npx mockserver -p 8080 -m mocks\" \"sleep 1 && npm run test:run\"",
     "serve:mocks": "npx mockserver -p 8080 -m mocks"
   },
   "dependencies": {
