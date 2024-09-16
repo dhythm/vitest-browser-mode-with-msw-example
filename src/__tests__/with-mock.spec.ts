@@ -1,12 +1,20 @@
 import { Mock } from "vitest";
-import { isOk } from "../utils";
+import { isOk } from "../isOk";
 
-vi.mock("../utils", async (importActual) => {
-  const actual = await importActual<typeof import("../utils")>();
+vi.mock("../isOk", async (importActual) => {
+  const actual = await importActual<typeof import("../isOk")>();
   return {
     ...actual,
     isOk: vi.fn(() => true),
     // isOk: vi.fn().mockImplementation(() => true),
+  };
+});
+
+vi.mock("../tryIframeAccess", async (importActual) => {
+  const actual = await importActual<typeof import("../tryIframeAccess")>();
+  return {
+    ...actual,
+    tryIframeAccess: vi.fn(actual.tryIframeAccess),
   };
 });
 
